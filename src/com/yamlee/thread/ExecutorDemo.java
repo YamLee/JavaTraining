@@ -6,7 +6,7 @@ import java.util.concurrent.Executors;
 /**
  * Created by Liyan on 2015/4/27.
  */
-public class Executor {
+public class ExecutorDemo {
     public static void main(String[] args){
         ExecutorService executorService = Executors.newCachedThreadPool();
         executorService.execute(new ExecutorRunnable());

@@ -19,9 +19,9 @@ public class ThreadInterrupt {
                     Thread.currentThread().interrupt();
                     System.out.println("set interrupt");
                 }
-                if(Thread.currentThread().isInterrupted()){
+                if(Thread.interrupted()){
                     try {
-                        Thread.sleep(100000);
+                        Thread.sleep(5000);
                         System.out.println("sleeping");
                     } catch (InterruptedException e) {
                         e.printStackTrace();
