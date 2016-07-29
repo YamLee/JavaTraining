@@ -8,7 +8,7 @@ import java.util.Map;
 /**
  * Created by yamlee on 7/12/16.
  */
-public class MethodHandleTest {
+public class MethodHandle {
     private List<Map<String, Map>> list;
 
     public static void main(String[] args) throws ClassNotFoundException, IllegalAccessException, InstantiationException {
@@ -16,7 +16,7 @@ public class MethodHandleTest {
 
         testClass();
 
-        testDefaultMethod();
+//        testDefaultMethod();
         testProxy();
     }
 
@@ -34,7 +34,7 @@ public class MethodHandleTest {
         people.printlnName();
     }
 
-    private static void testDefaultMethod() {
+/*    private static void testDefaultMethod() {
         Demo demo = new Demo() {
             @Override
             public void print1(ArrayList value) {
@@ -52,7 +52,7 @@ public class MethodHandleTest {
             }
         };
         demo.print3();
-    }
+    }*/
 
     private static void testClass() {
         int[] intNum = new int[2];
@@ -113,7 +113,7 @@ public class MethodHandleTest {
     public interface Demo {
         int value = 1;
 
-        void print1(ArrayList<List<String>> value);
+        void print1(ArrayList<String>[] value);
 
         void print2(String value);
 
