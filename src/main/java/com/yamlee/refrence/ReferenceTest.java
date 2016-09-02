@@ -31,7 +31,7 @@ public class ReferenceTest {
 //        People p11 = pp;
 //        People p22 = pp;
 //        System.out.println(p11 == p22);
-        System.out.println("0".equals(null));
+        System.out.println((1f)==1);
 
     }
 
