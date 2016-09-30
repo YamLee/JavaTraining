@@ -5,20 +5,30 @@ package com.yamlee.jvm;
  */
 public class JvmStackMemory {
     public static void main(String[] args) {
-        JvmStackMemory stackMemory = new JvmStackMemory();
-        stackMemory.test(0);
+        try {
+            JvmStackMemory stackMemory = new JvmStackMemory();
+            stackMemory.test(0);
+        } catch (StackOverflowError error) {
+            error.printStackTrace();
+        }
     }
 
     /**
-     *方法栈深度大于虚拟机最大允许方法栈深度,则会报StackOverFlowError
+     * 方法栈深度大于虚拟机最大允许方法栈深度,则会报StackOverFlowError
      */
     public int test(int i) {
-        if (i == 100000) {
-            return i;
-        } else {
-            i++;
-            System.out.println("method i ++:" + i);
-            return test(i);
+        try {
+            if (i == 7100) {
+                return i;
+            } else {
+                i++;
+                System.out.println("method i ++:" + i);
+                return test(i);
+            }
+        } catch (StackOverflowError error) {
+
         }
+        return i;
     }
+
 }

@@ -11,8 +11,12 @@ public class MemoryModel {
     static int a, b,c;
 
     public static void main(String[] args) throws InterruptedException {
-//        visibilityTest();
+        visibilityTest();
 //        atomicityTest();
+//        ordering();
+    }
+
+    private static void ordering() throws InterruptedException {
         Thread thread1 = new Thread(new Runnable() {
             @Override
             public void run() {
